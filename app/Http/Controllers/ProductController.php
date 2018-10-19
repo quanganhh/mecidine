@@ -166,6 +166,7 @@ class ProductController extends Controller
         $filename = '';
         if (!empty($request->hasFile('image'))) 
         {
+            $checkUpload = true;
             $file = $request->file('image');
             $filename = $request->file('image')->getClientOriginalName();
             $file->move(public_path('/uploads/images'),$filename);

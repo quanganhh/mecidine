@@ -77,5 +77,6 @@ return [
     'level'               => 'Level',
     'khgia'               => 'Price',
     'detail'              => 'Detail',
+    'searchkey'           => 'Search with keyword',
     
 ];

@@ -10,6 +10,9 @@
       </button>
     </div>
     <div class="collapse navbar-collapse" id="navigator-header">
+        @php
+            // dd(Session::get('cart'));
+        @endphp
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{ route('index') }}">Trang chủ</a></li>
         <li><a href="#">Giới thiệu</a></li>
@@ -38,83 +41,51 @@
                 </div>
           </div>
         </li>
-      </ul>      
+      </ul>
+      {{-- @dd(Session::get('cart'))    --}}
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{-- {{ route('register') }} --}}">Đăng ký</a></li>
         <li class="dropdown">
           <a href="{{-- {{ route('login') }} --}}">Đăng nhập </a>
         </li>
+            @if(Session::has('cart'))
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-cart"></span>
-            <span class="message-count">99</span></a>
+            <span class="message-count">
+                    (@if(Session::has('cart')){{ count(Session::get('cart'))}} @else Không có sản phẩm nào @endif)
+            </span>
+          </a>
+           
           <div class="dropdown-menu" role="menu">
             <div class="popmenu popup-cart">
                     <span class="popmenu-bullet"></span>
                     <div class="cart-list" id="cart-list">
                         <table class="table">
+
+                            @foreach(Session::get('cart') as $checkout)
+
                           <tr>
-                            <td><a class="img" href="#"><img src="{{ asset('bower_components/assets_frontend/data/images/avatar2.jpg') }}" alt="avatar" /></a>
+                            <td><a class="img" href="#"><img src="{{ URL::to('/').'/uploads/images/'.$checkout['attributes']['image'] }}" alt="avatar" /></a>
                             </td>
-                            <td width="45%"><a class="g-title" href="#">Combo 2 túi vải đựng đồ đa năng</a>
+                            <td width="45%"><a class="g-title" href="#">{{ $checkout->name }}</a>
                             </td>
-                            <td width="15%">x 11</td>
-                            <td>5.100.000</td>
-                            <td><a href="#">X</a></td>
+                            <td width="15%">x {{ $checkout->quantity }}</td>
+                            <td>{{ number_format($checkout->unit_price) }}</td>
+                            <td><a href="{{ route('deleteCart') }}">X</a></td>
                           </tr>
-                          <tr>
-                            <td><a class="img" href="#"><img src="{{ asset('bower_components/assets_frontend/data/images/avatar2.jpg') }}" alt="avatar" /></a>
-                            </td>
-                            <td width="45%"><a class="g-title" href="#">Combo 2 túi vải đựng đồ đa năng</a>
-                            </td>
-                            <td width="15%">x 11</td>
-                            <td>5.100.000</td>
-                            <td><a href="#">X</a></td>
-                          </tr>
-                          <tr>
-                            <td><a class="img" href="#"><img src="{{ asset('bower_components/assets_frontend/data/images/avatar2.jpg') }}" alt="avatar" /></a>
-                            </td>
-                            <td width="45%"><a class="g-title" href="#">Combo 2 túi vải đựng đồ đa năng</a>
-                            </td>
-                            <td width="15%">x 11</td>
-                            <td>5.100.000</td>
-                            <td><a href="#">X</a></td>
-                          </tr>
-                          <tr>
-                            <td><a class="img" href="#"><img src="{{ asset('bower_components/assets_frontend/data/images/avatar2.jpg') }}" alt="avatar" /></a>
-                            </td>
-                            <td width="45%"><a class="g-title" href="#">Combo 2 túi vải đựng đồ đa năng</a>
-                            </td>
-                            <td width="15%">x 11</td>
-                            <td>5.100.000</td>
-                            <td><a href="#">X</a></td>
-                          </tr>
-                          <tr>
-                            <td><a class="img" href="#"><img src="{{ asset('bower_components/assets_frontend/data/images/avatar2.jpg') }}" alt="avatar" /></a>
-                            </td>
-                            <td><a class="g-title" href="#">Combo 2 túi vải đựng đồ đa năng</a></td>
-                            <td>x 11</td>
-                            <td>5.100.000</td>
-                            <td><a href="#">X</a></td>
-                          </tr>
-                          <tr>
-                            <td><a class="img" href="#"><img src="{{ asset('bower_components/assets_frontend/data/images/avatar2.jpg') }}" alt="avatar" /></a>
-                            </td>
-                            <td><a class="g-title" href="#">Combo 2 túi vải đựng đồ đa năng</a></td>
-                            <td>x 11</td>
-                            <td>5.100.000</td>
-                            <td><a href="#">X</a></td>
-                          </tr>
+                          @endforeach
                         </table>
                     </div><!--cart-list-->
                     <div class="popmenu-bottom clearfix">
-                    <a href="#" class="pull-left">Xem chi tiết <span class="glyphicon glyphicon-share-alt">
+                    <a href="{{ route('show') }}" class="pull-left">Thanh toán ngay <span class="glyphicon glyphicon-share-alt">
                     </span></a>
-                        <span class="pull-right">Tổng tiền: <strong class="text-danger">1.234.555 đ</strong>
+                        <span class="pull-right">Tổng tiền: <strong class="text-danger">{{ number_format(Session::get('subTotal')) }} vnđ</strong>
                         </span>
                     </div>
                 </div>
            </div>
-        </li>        
+        </li>  
+        @endif      
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-pull-leftuid -->

@@ -19,7 +19,7 @@
     {{ session()->get('wanning') }}  
   </div>
   @endif
-
+  <p id="notify" class="alert alert-success" style="display: none"></p>
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
@@ -169,6 +169,10 @@
                 success: function(data) {
                   if(data)
                   {
+                    $('#notify').fadeIn().text('Sửa thành công');
+                    setTimeout(function(){
+                      $('#notify').fadeOut();
+                    },3000);
                     $('#title-'+cate_id).html(data);
                     $('.editCate'+cate_id).attr('data-name',data);
                     $('#editCate').modal('hide');

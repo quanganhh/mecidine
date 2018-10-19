@@ -14,27 +14,32 @@ class CategoriesTableSeeder extends Seeder
          DB::table('categories')->insert([
             [
                 'category_name' => 'Thuốc cấp cứu, giải độc',
-                'created_at' => date('Y-m-d H-i-s'),
+                'image'         => '10.png',
+                'created_at' => null,
                 'updated_at' => null
             ],
             [
                 'category_name' => 'Thuốc giảm đau, hạ sốt',
-                'created_at' => date('Y-m-d H-i-s'),
+                'image'         => '10.png',
+                'created_at' => null,
                 'updated_at' => null
             ],
             [
                 'category_name' => 'Thuốc ngoài da',
-                'created_at' => date('Y-m-d H-i-s'),
+                'image'         => '10.png',
+                'created_at' => null,
                 'updated_at' => null
             ],
             [
                 'category_name' => 'Thuốc đường tiêu hóa',
-                'created_at' => date('Y-m-d H-i-s'),
+                'image'         => '10.png',
+                'created_at' => null,
                 'updated_at' => null
             ],
             [
                 'category_name' => 'Thuốc đường hô hấp',
-                'created_at' => date('Y-m-d H-i-s'),
+                'image'         => '10.png',
+                'created_at' => null,
                 'updated_at' => null
             ]
         ]);

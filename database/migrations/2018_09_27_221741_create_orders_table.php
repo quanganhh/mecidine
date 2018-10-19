@@ -39,12 +39,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropForeign([
-            'user_id',
-            'shipment_id',
-            'payment_id',
-            'order_status_id',
-        ]);
         Schema::dropIfExists('orders');
     }
 }

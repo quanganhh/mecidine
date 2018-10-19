@@ -4,11 +4,14 @@
     <div class="container">
         <div class="row pages-content">
             <div class="col-lg-12 col-md-12 col-sm-12">
+                {{-- @php
+                dd(Cart::content());
+                @endphp --}}
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
                     <li class="active"><a href="#">{{ $product_detail->name }}</a></li>
                 </ol>
-                <div class="row product-detail-page clearfix">
+                    <div class="row product-detail-page clearfix">
                     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 pd-left">
                         <div class="image-view-outer">
                             @if($product_detail->promotion_price != 0)
@@ -41,10 +44,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        {{-- <label class="col-sm-3 control-label">Giá bán lẻ</label>
-                                        <div class="col-sm-9">
-                                            <div class="form-control-static"><span class="lbl-price">900.000 đ</span>  <span class="clr-99 lbl-price-old">1.800.000 đ</span></div>
-                                        </div> --}}
+                                       <label class="col-sm-12 control-label">Giá sản phẩm:</label>
                                          @if($product_detail->promotion_price == 0)
                                         <span class="item-price">{{ number_format($product_detail->unit_price) }} vnđ</span>
                                         @else
@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-12 control-label">Giá bán theo lố:</label>
+                                        <label class="col-sm-12 control-label">Giá bán theo lô:</label>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12">
@@ -93,20 +93,26 @@
                                     <div class="form-group">
                                         <label class="col-sm-12 control-label">ĐẶT HÀNG:</label>                                    </div>
                                         <div class="form-group">
+                                        <form action="{{ route('addCart',$product_detail->id) }}" method="get">
                                             <div class="col-sm-12">
                                                 <div class="order-box clearfix">
                                                     <div class="num-product">
                                                         <span>Số lượng:</span>                                
-                                                        <div class="text-spell"><input name="" type="text" class="text" style="width:58px;"  value="1"/><span class="spell-up"></span><span class="spell-down"></span></div>
+                                                        <div class="text-spell">
+                                                        <input type="number" name="quantity" style="width:58px;" min="1"  value="1"/>
+                                                        </span></div>
                                                     </div>
                                                     <div class="box-order-button">
-                                                        <div class="clearfix"><a href="#" class="btn-order-form">Thanh toán ngay</a></div>
-                                                        <a id="btn-pdcart-id" class="btn-pdcart" onclick="pussCart();"><i class="fa fa-shopping-cart"></i> Đưa vào giỏ hàng</a>
+                                                        <div class="clearfix">
+                                                            <a href="{{ route('show') }}" class="btn-order-form">Thanh toán ngay</a>
+                                                        </div>
+                                                    
+                                                        <button type="submit" value="">Đưa vào giỏ hàng</button>
                                                     </div>
                                                 </div>
                                             </div>
+                                          </form>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs">
@@ -221,7 +227,7 @@
                   </div>
                     </div>
                 </div>
-                <div class="clearfix"></div>            
+                <div class="clearfix"></div>                            
             </div>
         </div>
     </section>

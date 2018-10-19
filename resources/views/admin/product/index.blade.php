@@ -17,13 +17,13 @@
                 <tr>
                 <th>ID</th>
                   <th>{{ trans('message.name_pr') }}</th>
-	              <th>{{ trans('message.category') }}</th>
-	              <th>{{ trans('message.image') }}</th>
-	              <th>{{ trans('message.price') }}</th>
-	              <th>{{ trans('message.sale') }}</th>
+                  <th>{{ trans('message.category') }}</th>
+                  <th>{{ trans('message.image') }}</th>
+                  <th>{{ trans('message.price') }}</th>
+                  <th>{{ trans('message.sale') }}</th>
                   <th>{{ trans('message.qty') }}</th>
-	              <th>{{ trans('message.status') }}</th>
-	              <th>{{ trans('message.action') }}</th>
+                  <th>{{ trans('message.status') }}</th>
+                  <th>{{ trans('message.action') }}</th>
                 </tr>
                 </thead>
                 <tbody>

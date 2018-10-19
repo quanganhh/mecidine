@@ -19,24 +19,30 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
 
     Route::group(['prefix'=>'category'],function(){
-    Route::resource('categories', 'CategoriesController');
-    Route::resource('products', 'ProductController');
-    Route::get('ajaxEdit/{id}','CategoriesController@ajaxEdit')->name('edit');
+        Route::resource('categories', 'CategoriesController');
+        Route::resource('products', 'ProductController');
+        Route::get('ajaxEdit/{id}','CategoriesController@ajaxEdit')->name('edit');
     });
 
     Route::group(['prefix'=>'order'],function(){
-    Route::get('order', 'OrderController@index')->name('order');
-    Route::get('detail', 'OrderController@detail')->name('detail');
-    Route::post('ship', 'OrderController@ship')->name('ship');
-    Route::post('done', 'OrderController@done')->name('done');
+        Route::get('order', 'OrderController@index')->name('order');
+        Route::get('detail', 'OrderController@detail')->name('detail');
+        Route::post('ship', 'OrderController@ship')->name('ship');
+        Route::post('done', 'OrderController@done')->name('done');
     });
 
     Route::group(['prefix'=>'user'],function(){
-     Route::resource('user', 'UserController');
-    });
+       Route::resource('user', 'UserController');
+   });
 
 });
 Route::get('/', 'PageController@index')->name('index');
+Route::group(['prefix'=>'cart'],function(){
+ Route::get('add-to-cart/{id}', 'CartController@getAddCart')->name('addCart');
+ Route::get('show', 'CartController@getShowCart')->name('show');
+ Route::get('delete', 'CartController@getDeleteCart')->name('deleteCart');
 
+});
 Route::get('categoryPage/{id}', 'PageController@getCategoryPage')->name('categoryPage');
 Route::get('productDetail/{id}', 'PageController@getProductDetail')->name('productDetail');
+Route::get('search', 'PageController@getSearch')->name('search');

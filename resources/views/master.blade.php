@@ -15,6 +15,8 @@
 <link href="{{ asset('bower_components/assets_frontend/css/responsive.css')}}" rel="stylesheet">
 <link href="{{ asset('bower_components/assets_frontend/css/font-awesome.min.css')}}" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/assets_frontend/css/jcarousel.responsive.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('bower_components/assets_frontend/css/cloudzoom.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('bower_components/assets_frontend/css/checkout.css') }}" />
 <!--Requie JS-->
 <script src="{{ asset('bower_components/assets_frontend/js/jquery.min.js') }}"></script>
 <script src="{{ asset('bower_components/assets_frontend/js/bootstrap.min.js') }}"></script>
@@ -22,6 +24,7 @@
 <script type="text/javascript" src="{{ asset('bower_components/assets_frontend/js/jcarousel.responsive.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/assets_frontend/js/jquery.jcarousel.min.js') }}"></script>
 <script src="{{ asset('bower_components/assets_frontend/js/style.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/assets_frontend/js/cloudzoom.js') }}"></script>
 
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -77,13 +80,14 @@
                 <div class="search-box">
                     <div class="search-inner">            
                         <div class="input-group">
-        <input type="text" class="form-control" 
-        onfocus="javascript:if(this.value=='Nhập từ khóa cần tìm kiếm...'){this.value='';};" 
-        onblur="javascript:if(this.value==''){this.value='Nhập từ khóa cần tìm kiếm...';};" 
-        value="Nhập từ khóa cần tìm kiếm...">
+                            <input type="text" class="form-control" id="keyword"
+                            onfocus="javascript:if(this.value=='Nhập từ khóa cần tìm kiếm...'){this.value='';};" 
+                            onblur="javascript:if(this.value==''){this.value='Nhập từ khóa cần tìm kiếm...';};" 
+                            value="Nhập từ khóa cần tìm kiếm...">
                         </div>
                     </div>
-                    <a class="btn-search">Tìm kiếm</a>
+                   <button type="submit" id="search" onclick="searchData();" class="btn btn-success">Tìm kiếm</button>
+
                 </div>          
             </div>        
       </div>
@@ -100,5 +104,14 @@
   js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.1&appId=422195711471662&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+@section('scripts')
+<script>
+      function searchData()
+{
+    let keyword = $('#keyword').val().trim();
+    window.location.href = "{{ route('search') }}" + "?keyword="+keyword;
+}
+</script>
 </body>
 </html>

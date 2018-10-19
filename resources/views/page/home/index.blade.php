@@ -88,7 +88,7 @@
   </div>
   <div class="content-product">
    <div class="row col-product-home">
-       <div class="col-lg-3 col-md-4 col-sm-4 home-banner-pro"><a href="#" title=""><img src="{{ asset('bower_components/assets_frontend/data/heart-cat4.') }}" alt="" title=""/></a></div>
+       <div class="col-lg-3 col-md-4 col-sm-4 home-banner-pro"><a href="#" title=""><img src="{{ asset('bower_components/assets_frontend/images/data/heart-cat4.png') }}" alt="" title=""/></a></div>
        <div class="col-lg-9 col-md-8 col-sm-12">
            <div class="row">  
             @foreach($value['products'] as $category_product)

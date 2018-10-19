@@ -13,8 +13,11 @@
             <option value="1">Người dùng</option>
         </select>
         <input type="text" name="" id="keyword" value="{{-- {{ $key }} --}}">
-        <button type="submit" class="btn-default" id="search" onclick="searchData();">{{ trans('message.search') }}</button>
-        <button type="button" class="btn btn-success pull-right col-md-3"  data-toggle="modal" data-target="#myModal">{{ trans('message.add') }}</button>
+        <button type="button" class="btn-default" id="search" onclick="searchData();">{{ trans('message.search') }}</button>
+        <a href="{{ route('user.create') }}">
+            <button type="button" class="btn btn-success pull-right col-md-3">{{ trans('message.add') }}
+            </button>
+        </a>
       </div>
       <!-- /.box-header -->
       <div class="box-body">

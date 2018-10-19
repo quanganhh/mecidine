@@ -30,10 +30,6 @@ class CreateOrderProductTable extends Migration
      */
     public function down()
     {
-        Schema::dropForeign([
-            'product_id',
-            'order_id',
-        ]);
         Schema::dropIfExists('order_product');
     }
 }

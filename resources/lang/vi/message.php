@@ -79,4 +79,5 @@ return [
     'level'               => 'Quyền',
     'khgia'               => 'Khoảng giá',
     'detail'              => 'Chi tiết',
+    'searchkey'           => 'Tìm kiếm với từ khóa',
 ];

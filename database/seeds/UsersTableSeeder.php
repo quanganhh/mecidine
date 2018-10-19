@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
             'address' => 'Hà Nội',
             'level' => 0,
             'status' => 1,
-            'created_at' => date('Y-m-d H-i-s'),
+            'created_at' => null,
             'updated_at' => null,
 
         ]);
