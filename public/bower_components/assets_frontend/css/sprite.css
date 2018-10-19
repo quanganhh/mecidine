@@ -1,0 +1,148 @@
+/*--------------------------------------------------------------------------------------------
+# Author: Le Duc Anh <anhld@peacesoft.net> - Mobile: 0987 353 726
+# @license - Copyrighted Commercial Software
+# Websites:  http://www.chodientu.vn - http://www.nganluong.vn - http://www.ebay.vn
+# Copyright (C) 2000-2013 PeaceSoft Solutions Corporation. All Rights Reserved.
+--------------------------------------------------------------------------------------------*/
+.icon-cart{
+	background: url(../images/icons/icons.png) no-repeat 0 -40px;
+	width:26px;
+	height:22px;
+	display:inline-block;
+	vertical-align:top;
+	margin:-1px 0 0;
+}
+.icon-skype,.icon-facebook{
+	width:16px;
+	height:16px;
+	display:inline-block;
+	vertical-align:middle;
+	background:url(../images/icons/icon-support.png) no-repeat;
+}
+.icon-skype{
+	background-position:0 0;
+}
+.icon-facebook{
+	background-position:0 -21px;
+}
+.icon-process{
+	background:#FFF;
+	width:65px;
+	height:40px;
+	display:block;
+	border:1px solid #D9d9d9;
+	border-radius:5px;
+	margin:5px auto;
+}
+.icon-pr-home{
+	background: url(../images/icon-process-2.png) no-repeat 5px -178px #FFF;
+}
+.icon-pr-usa{
+	background: url(../images/icon-process-2.png) no-repeat 12px -139px #FFF;
+}
+.icon-pr-payment{
+	background: url(../images/icon-process-2.png) no-repeat 12px -100px #FFF;
+}
+.icon-pr-order{
+	background: url(../images/icon-process-2.png) no-repeat 12px -58px #FFF;
+}
+.support-block{
+	background:url(../images/support-header.png) no-repeat left center;
+	float:right;
+	min-height:70px;
+	width:200px;
+	position:relative;
+	display:block;
+}
+.icon-phone{
+	background:url(../images/phone-icon.png) no-repeat right 10px;
+	padding-right:65px;
+	text-align:right;
+	min-height:50px;
+	margin-top:10px;
+	padding-top:10px;
+	display:block;
+}
+.icon-facebook-footer{
+	background:url(../images/icon-share.png) no-repeat 0 0;
+	width:18px;
+	height:18px;
+	display:inline-block;
+}
+.icon-twitter-footer{
+	background:url(../images/icon-share.png) no-repeat -21px 0;
+	width:18px;
+	height:18px;
+	display:inline-block;
+}
+.icon-pinit-footer{
+	background:url(../images/icon-share.png) no-repeat -63px 0;
+	width:18px;
+	height:18px;
+	display:inline-block;
+}
+.icon-gplus-footer{
+	background:url(../images/icon-share.png) no-repeat -84px 0;
+	width:29px;
+	height:18px;
+	display:inline-block;
+}
+.icon-youtube-footer{
+	background:url(../images/icon-share.png) no-repeat -116px 0;
+	width:18px;
+	height:18px;
+	display:inline-block;
+}
+.icon-userdown{
+	background: url(../images/icons/icons.png) no-repeat 0 -32px;
+	width:7px;
+	height:4px;
+	display:inline-block;
+	margin:6px 0 0 4px;
+	vertical-align:top;
+}
+.i-payment-shipchung{
+    background:url(../images/payments.png) no-repeat 0 -365px;
+    width:32px;
+    height:32px;
+    display:block;
+}
+.i-payment-cod{
+    background:url(../images/payments.png) no-repeat 0 -180px;
+    width:60px;
+    height:35px;
+    display:block;
+}
+.icon-nl23{
+	background: url(../images/icons/icons.png) no-repeat 0 -1536px;
+	width:23px;
+	height:23px;
+	display:inline-block;
+	vertical-align:top;
+	margin:0;
+}
+/*List Partners*/
+a.logo-fb, a.logo-google, a.logo-yahoo, a.logo-CDT {
+    background-image: url(../images/list-partners.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 24px;
+	vertical-align:bottom;
+}
+a.logo-fb {
+    background-position: 0 0;
+    width: 87px;
+}
+a.logo-google {
+    background-position: 0 -32px;
+    width: 68px;
+}
+a.logo-yahoo {
+    background-position: 0 -66px;
+    width: 90px;
+}
+a.logo-CDT {
+    background-position: 0 -100px;
+    width: 48px;
+}
+/*End List Partners*/

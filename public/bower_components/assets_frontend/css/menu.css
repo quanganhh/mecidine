@@ -1,0 +1,258 @@
+.menu-shadow{
+	z-index:105;
+	background: url(../images/popup-expand.png) repeat-y top left;
+	width:5px;
+	height:424px;
+	top:0;
+	left:0;
+	position:absolute;
+}
+.menu-expand {
+    /*height: 420px;*/
+	height: 360px;
+    padding: 20px 18px 0;
+    width: 595px;
+	border-bottom:1px solid #FFF !important;
+}
+.menu-sub1 li .menu-expand  a{
+	color:#333;
+}
+.menu-sub1 li .menu-expand  a:hover{
+	text-decoration:underline;
+	color:#FEB022;
+}
+.menu-expand h2 {
+    color: #F47A20;
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+.menu-expand ul {
+    list-style: none outside none;
+    margin: 15px 0 0;
+    padding: 0;
+    position: relative;
+}
+.menu-expand li{
+	padding:0 !important;
+}
+.menu-expand li a {
+    cursor: pointer;
+}
+.menu-expand li a:hover {
+    color: #F47A20;
+    text-decoration: underline;
+}
+.menu-expand li.mgt25 {
+    margin-top: 25px;
+}
+.menu-expand li ul {
+    margin: 10px 0;
+    padding: 0;
+}
+.menu-expand li li {
+    color: #666666;
+    list-style: disc inside none;
+	margin-left:20px;
+}
+.menu-expand .fb {
+    font-weight: bold;
+}
+.menu-expand .auction {
+    width: 218px;
+}
+.menu-expand .mgl40 {
+    margin-left: 40px;
+}
+.menu-expand .nav-tag, .menu-expand li:hover .nav-tag {
+    color: #999999;
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+}
+ul.mebe li {
+    float: left;
+    margin: 0;
+}
+ul.mebe {
+    margin: 16px 0 0;
+}
+ul.mebe li a.disImg {
+    float: left;
+    height: 82px;
+    margin-right: 10px;
+    text-align: center;
+    width: 61px;
+}
+ul.mebe li .desImg {
+    float: left;
+    padding-top: 20px;
+    width: 94px;
+}
+ul.purf li .desImg {
+    width: 126px !important;
+}
+ul.phukien li {
+    float: left;
+    margin: 0;
+}
+ul.phukien {
+    margin: 16px 0 0;
+}
+ul.phukien li a.disImg {
+    float: left;
+    height: 82px;
+    margin-right: 5px;
+    text-align: center;
+    width: 68px;
+}
+ul.phukien li .desImg {
+    float: left;
+    padding-top: 20px;
+    width: 90px;
+}
+ul.temp-alias1 {
+    list-style: none outside none;
+    margin: 16px 0 0;
+    width: 338px;
+}
+ul.temp-alias2 li {
+    clear: both;
+}
+ul.temp-alias1 li {
+    float: left;
+    width: 169px;
+}
+ul.temp-alias1 li a.dispImg {
+    float: left;
+    height: 60px;
+    margin-right: 10px;
+    width: 60px;
+}
+ul.temp-alias1 li .desImg {
+    float: left;
+    margin-right: 10px;
+    padding-top: 20px;
+    width: 89px;
+}
+.hotDeal-left {
+    border-right: 1px solid #EBEBEB;
+    float: left;
+    height: 400px;
+    position: relative;
+    width: 185px;
+}
+.hotDeal-left ul.list-itemDeal li {
+    position: relative;
+}
+.hotDeal-left ul.list-itemDeal li a {
+    display: block;
+	color:#333;
+}
+.hotDeal-left ul.list-itemDeal li.active{
+	background:transparent !important;
+}
+.hotDeal-left ul.list-itemDeal li:hover a {
+	text-decoration:underline;
+	color:#FEB022 !important;
+}
+.hotDeal-left ul.list-itemDeal li b {
+    height: 41px;
+    position: absolute;
+    right: -6px;
+    top: -12px;
+    width: 6px;
+}
+.hotDeal-left ul.list-itemDeal li:hover b, .hotDeal-left ul.list-itemDeal li.active b {
+    background: url(../images/h-arr-cent.gif) no-repeat transparent;
+}
+.hotDeal-left ul.list-itemDeal li.active a {
+    color: #F47A20 !important;
+}
+.hotDeal-right {
+    float: left;
+    padding-left: 20px;
+    width: 280px;
+}
+.hotDeal-right h3 {
+    color: #333333;
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+.hotDeal-right ul.listDeal {
+    list-style: none outside none;
+    margin: 30px 0 0;
+    padding: 0;
+}
+.hotDeal-right ul.listDeal li .deal-60 {
+    float: left;
+    height: 60px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 60px;
+}
+.hotDeal-right ul.listDeal li .name-deal {
+	color:#333;
+}
+.hotDeal-right ul.listDeal li:hover .name-deal {
+	text-decoration:underline;
+	color:#FEB022;
+}
+.hotDeal-right ul.listDeal li .textOut {
+    text-decoration: line-through;
+}
+span.linkAll {
+    background: url(../images/viewmore.png) no-repeat left center;
+    padding-left: 8px;
+}
+/*laptop*/
+.temp-laptop{
+	margin:10px 0 0 !important;
+}
+.temp-laptop li{
+	width:160px !important;
+}
+.temp-laptop li a.dispImg{
+	float:none !important;
+	width:115px !important;
+	padding:0 !important;
+	text-align:center;
+}
+.temp-laptop li .desImg{
+	float:none !important;
+	padding-top:0 !important;
+	width:115px !important;
+	text-align:center;
+}
+.temp-laptop li .desImg a{
+	padding:0 !important;
+}
+/*end laptop*/
+.sub-3col.list-sub-menu-alias li{
+	width:33.3%;
+}
+.menu-expand div ul li{
+	width:40%;
+	float:left;
+}
+.menu-expand div h1{
+	font-size:24px;
+	color:#33880f;
+	margin-bottom:15px;
+	margin-top:0;
+}
+.alias-menu-item{
+	margin-bottom:20px;
+}
+.dot-icon{
+
+	padding-left:10px;
+}
+.dot-icon a{
+	padding:4px 0px !important;
+	color:#666 !important;
+}
+.menu-line{
+	background:#F2f2f2;
+	height:1px;
+	margin:0 15px;
+}

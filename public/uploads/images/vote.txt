@@ -1,0 +1,13 @@
+vote 
+id 
+product_id
+user_id
+content
+
+facetories
+-id
+-product_id
+-name
+-address
+-phone
+

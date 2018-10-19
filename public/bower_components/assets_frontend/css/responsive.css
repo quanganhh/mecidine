@@ -1,0 +1,289 @@
+/*--------------------------------------------------------------------------------------------
+# Author: Le Duc Anh <anhld@peacesoft.net> - Mobile: 0987 353 726
+# @license - Copyrighted Commercial Software
+# Websites:  http://www.chodientu.vn - http://www.nganluong.vn - http://www.ebay.vn
+# Copyright (C) 2000-2013 PeaceSoft Solutions Corporation. All Rights Reserved.
+--------------------------------------------------------------------------------------------*/
+@media (max-width:480px){	
+.navigation-menu .header-search-box .search-inner{
+	width:64%;
+}
+}
+@media (max-width:640px){	
+.news-category-block .media .media-object{
+	width:100%;
+	height:auto;
+}
+.news-category-block .media .pull-left{
+	float:none !important;	
+	margin-bottom:15px;
+	width:100%;
+	height:auto;
+}
+}
+
+@media (max-width:767px){
+.boxVas h2{
+	white-space:normal;
+}	
+.bills-wrapper{
+	width:100%;
+}	
+.bills-header .bills-id, .bills-header .bills-title{
+	text-align:center;
+}
+.bills-header .bills-logo{
+	margin:auto;
+}
+.right-slider-bar, .left-slider-bar{
+	float:inherit;
+}
+.box-content .box-step ul li{
+	width:100%;
+	margin:0 0 10px;
+}
+.box-content .box-step{
+	min-height:200px;
+}
+.sticker{
+	right:0;
+}	
+.product-filter.nav-pills>li{
+	width:100%;
+}	
+	
+/*Search box and main menu*/
+.col-lg-2.col-md-2.col-xs-4.main-menu{
+	width:100%;
+}
+.navbar.navbar-default.navbar-fixed-top{
+	position:inherit;
+}
+.menu-outer{
+	display:none;
+}
+.m-menu{
+	display:block;
+}
+.m-menu .form-control{
+	border:none;
+	border-radius:3px;
+}
+.search-box .input-group-addon{
+	display:none;
+}
+.header-search-box{
+	margin-top:-95px;
+	width:100%;
+}
+.header-search-box .search-box{
+	border:1px solid #D9D9D9;
+	overflow:hidden;
+	width:100%;
+	border-radius:3px;
+	margin-left:0;
+}
+.header-search-box .search-inner{
+	width:76%;
+
+
+}
+.header-search-box .input-group{
+	width:100%;
+}
+.header-search-box .btn-search{
+	float:right;
+}
+header{
+	margin-top:0;
+}
+/*End Search box and main menu*/
+.support-wiget{
+	display:none;
+}
+/*Cart*/
+.dropdown-menu .cart-list,.dropdown-menu .slimScrollDiv{
+	width:100% !important;
+}
+.center-tabs.pull-left{
+	border:none;
+	width:100%;
+}
+.list-model-more{
+	width:100%;
+	margin-bottom:10px
+}
+.navbar-default .navbar-brand{
+	display:block;
+}
+.logo,.process-order-block{
+	display:none;
+}	
+.item-product .sticker{
+	right:0;
+}
+.item-product{
+	height:auto;
+	margin-bottom:35px;
+
+}
+.item-product .img-pro{
+	height:auto;
+	
+}
+.item-product .img-pro a{
+	height:auto;
+	width:auto;
+	display:block;
+}
+.home-banner-wrapper{
+	display:none;
+}
+/**footer**/
+.footer-share, .footer-text .row.footer .col-lg-4.col-md-4.col-xs-12, .row.footer-info{
+	display:none;
+}
+footer{
+	background:#FAFAFA;
+}
+.footer-logo{
+	display:none;
+}
+.footer-info-company{
+	padding:15px 0 0 0;
+	text-align:center;
+}
+
+/**end footer**/
+}
+@media (min-width: 768px) and (max-width: 992px){
+.bills-wrapper{
+	width:100%;
+}	
+.col-lg-4.col-md-4.col-sm-4.col-xs-12.hidden-xs{
+	display:none;
+}	
+.row.footer .col-lg-4.col-md-4.col-xs-12{
+	display:none;
+}
+.footer-email.clearfix{
+	margin-bottom:15px;
+}
+.container {
+	width: auto;
+}
+.process-order-block{
+	display:none;
+}	
+.item-product .sticker{
+	right:0;
+}
+.item-product{
+	height:auto;
+	margin-bottom:35px;
+
+}
+.item-product .img-pro{
+	height:auto;
+	
+}
+.item-product .img-pro a{
+	height:auto;
+	width:auto;
+	min-height:180px;
+}
+}
+@media (min-width: 768px){
+.banner-small{
+	width:32%;
+}	
+.slider-banner-wrapper{
+	min-height:500px;
+}
+.modal-sm{
+	width:400px;
+}
+.navbar-default .navbar-brand{
+	display:none;
+}
+.search-inner{
+	width:82%;
+}
+.search-box .input-group-addon{
+	display:none;
+}
+.search-inner .input-group{
+	width:100%;
+}
+
+.search-box{
+	margin-left:-15%;
+}
+}
+@media (max-width: 991px){
+.home-banner-pro{
+	display:none;
+}
+}
+@media (min-width: 992px){
+.product-info-detail.form-horizontal .form-group{
+	margin-bottom:5px;
+}	
+.search-box .input-group-addon{
+	display:table-cell;
+}	
+.search-box{
+	margin-left:0%;
+}	
+.search-inner{
+	width:88%;
+}
+}
+@media (min-width: 1024px){
+	
+.banner-small{
+	width:214px;
+}	
+.carousel-inner > .item{
+	max-height:360px;		
+}	
+.search-inner{
+	width:88%;
+}
+.slider-banner-wrapper{
+	min-height:390px;
+	margin-left:275px;	
+}
+#slider-home-img{
+	max-height:310px;
+}
+.menu-expand{
+	width:265%;
+}
+}
+@media (min-width: 1200px){
+.banner-small{
+	width:281px;
+}	
+.search-inner{
+	width:90%;
+}
+.menu-expand{
+	width:340%;
+}
+.slidebar-detail-left.col-lg-9.col-xs-12{
+	width:77%;
+}
+.slidebar-detail-pd.col-lg-3{
+	width:22%;
+	float:right;
+	padding-left:0;
+}
+.slidebar-detail-pd .slide-box{
+	box-shadow:none;
+	margin-right:15px;
+
+}
+}
+
+
