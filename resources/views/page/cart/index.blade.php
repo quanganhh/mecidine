@@ -62,7 +62,7 @@
                         </div><!--yc-content-->
                         <div class="yc-content">
                         <div class="panel panel-default">
-                              <div class="panel-heading"><h5><i class="fa fa-truck"></i> Hình thức vận chuyển</h5></div>
+                              <div class="panel-heading"><h5><i class="fa fa-truck"></i>{{ trans('message.transport') }}</h5></div>
                               <div class="panel-body form-inline">
                                     <div class="form-group">
                                         <div class="radio">

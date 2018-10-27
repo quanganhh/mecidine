@@ -78,5 +78,6 @@ return [
     'khgia'               => 'Price',
     'detail'              => 'Detail',
     'searchkey'           => 'Search with keyword',
+    'transport'           => 'Transport mode',  
     
 ];

@@ -32,24 +32,22 @@ class CartController extends Controller
             )
         ]);
            $subTotal = 0;
-           foreach (Cart::getcontent() as $key => $value) {
+           foreach (Cart::getcontent() as $key => $value) 
+           {
                $subTotal  += $value->attributes->totalPrice;
                Session::put('subTotal', $subTotal);  
-           }
-             
+           }  
         Session::put('cart', Cart::getcontent());
+
          return redirect()->back();
     }
     
     public function getShowCart()
     {
-        // cai ma hien ra tong tien, so luong, la ham nao o
         $data['subTotal'] = Cart::getTotal();
-        // dd($data['subTotal']);
         $data['items'] = Cart::getcontent();
- 
-         // dd($data);
-        return view('page.cart.index',$data);
+
+        return view('page.cart.index', $data);
     }
 
     public function getDeleteCart()

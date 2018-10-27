@@ -25,11 +25,6 @@
 <script type="text/javascript" src="{{ asset('bower_components/assets_frontend/js/jquery.jcarousel.min.js') }}"></script>
 <script src="{{ asset('bower_components/assets_frontend/js/style.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/assets_frontend/js/cloudzoom.js') }}"></script>
-
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 <body>
  @include('header')
@@ -104,8 +99,6 @@
   js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.1&appId=422195711471662&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
-@section('scripts')
 <script>
       function searchData()
 {

@@ -10,9 +10,6 @@
       </button>
     </div>
     <div class="collapse navbar-collapse" id="navigator-header">
-        @php
-            // dd(Session::get('cart'));
-        @endphp
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{ route('index') }}">Trang chủ</a></li>
         <li><a href="#">Giới thiệu</a></li>
@@ -44,15 +41,32 @@
       </ul>
       {{-- @dd(Session::get('cart'))    --}}
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{-- {{ route('register') }} --}}">Đăng ký</a></li>
+        @if(!Auth::user())
+        <li><a href="{{ route('register') }}">Đăng ký</a></li>
         <li class="dropdown">
-          <a href="{{-- {{ route('login') }} --}}">Đăng nhập </a>
+          <a href="{{ route('signin') }}">Đăng nhập</a>
         </li>
+        @else
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Xin chào, <span class="text-warning">{{ Auth::user()->name }}</span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li class="info-account clearfix">
+                    <span class="pull-left"><img src="images/data/avatar.jpg" /></span> {{ Auth::user()->name }} <br /><span class="clr-99">{{ Auth::user()->username }}</span>
+                </li>
+                 <li class="divider"></li>
+                <li><a href="#"><i class="glyphicon glyphicon-info-sign"></i> Thông tin cá nhân</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="glyphicon glyphicon-book"></i> Hoá đơn của tôi</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="glyphicon glyphicon-log-out"></i> Đăng xuất</a></li>
+            </ul>
+        </li>
+        @endif
             @if(Session::has('cart'))
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-cart"></span>
             <span class="message-count">
-                    (@if(Session::has('cart')){{ count(Session::get('cart'))}} @else Không có sản phẩm nào @endif)
+                    (@if(Session::has('cart')){{ count(Session::get('cart'))}} @else Không có sản phẩm nào 
+                    @endif)
             </span>
           </a>
            

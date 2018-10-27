@@ -80,4 +80,5 @@ return [
     'khgia'               => 'Khoảng giá',
     'detail'              => 'Chi tiết',
     'searchkey'           => 'Tìm kiếm với từ khóa',
+    'transport'           => 'Hình thức vận chuyển',
 ];

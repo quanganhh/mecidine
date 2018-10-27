@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 use App\Model\Product;
 use App\Model\Category;
+use App\User;
 use DB;
 use Cart;
-
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
+use Hash;
+use Auth;
 
 class PageController extends Controller
 {
@@ -64,5 +67,68 @@ class PageController extends Controller
         ->where('products.name','LIKE',"%{$keyword}%")->orWhere('products.unit_price','LIKE',"%{$keyword}%")->orderBy('id','DESC')->get();
         
         return view('page.search.index',$data);
+    }
+
+    public function getRegister()
+    {
+        return view('page.register.index');
+    }
+
+    public function postRegister(Request $request)
+    {
+        $this->validate($request,
+        [
+            'username'    => 'required|unique:users,username',
+            'email'       => 'required|unique:users,email',  
+            'password'    => 'required|min:6|max:16',
+            're_password' => 'required|same:password',
+        ],
+        [
+            'username.required' => 'Vui lòng nhập username',
+            'username.unique'   => 'Tên đăng nhập đã tồn tại',
+            'email.unique'      => 'Email đã tồn tại',
+            'password.required' => 'Vui lòng nhập password',
+            're_password.same'  => 'Mật khẩu không trùng khớp',
+            'password.min'      => 'Mật khẩu ít nhất phải 6 kí tự',
+            'password.max'      => 'Mật khẩu tối đã 16 kí tự',
+        ]);
+
+        $user = new User();
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->password = Hash::make($request->password);
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        $user->address = $request->address;
+        $user->save();
+
+        return redirect()->with('success', 'Đăng kí thành công');
+    }
+
+    public function getSignin()
+    {
+        return view('page.signin.index');
+    }
+
+    public function postSignin(Request $request)
+    {
+        // dd('ok');
+        $this->validate($request,
+        [
+            // 'username'    => 'required|unique:users,username',
+            'password'    => 'required|min:6|max:16',
+        ],
+        [
+            'username.required' => 'Vui lòng nhập username',
+            'password.required' => 'Vui lòng nhập password',
+            'password.min'      => 'Mật khẩu ít nhất phải 6 kí tự',
+            'password.max'      => 'Mật khẩu tối đã 16 kí tự',
+        ]);
+        $credentials = array('username' => $request->username , 'password' => $request->password);
+        if(Auth::attempt($credentials)){
+        return redirect()->route('index')->with('loginSuccess', 'Đăng nhập thành công');
+        }else{
+        return redirect()->back()->with('fail', 'Đăng nhập thất bại');
+        }
     }
 }

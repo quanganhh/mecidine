@@ -46,3 +46,8 @@ Route::group(['prefix'=>'cart'],function(){
 Route::get('categoryPage/{id}', 'PageController@getCategoryPage')->name('categoryPage');
 Route::get('productDetail/{id}', 'PageController@getProductDetail')->name('productDetail');
 Route::get('search', 'PageController@getSearch')->name('search');
+Route::get('signup', 'PageController@getRegister')->name('register');
+Route::post('register', 'PageController@postRegister')->name('postRegister');
+
+Route::get('login', 'PageController@getSignin')->name('signin');
+Route::post('signin', 'PageController@postSignin')->name('postSignin');
