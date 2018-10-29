@@ -57,7 +57,7 @@
                 <li class="divider"></li>
                 <li><a href="#"><i class="glyphicon glyphicon-book"></i> Hoá đơn của tôi</a></li>
                 <li class="divider"></li>
-                <li><a href="#"><i class="glyphicon glyphicon-log-out"></i> Đăng xuất</a></li>
+                <li><a href="{{ route('logout-frontend') }}"><i class="glyphicon glyphicon-log-out"></i> Đăng xuất</a></li>
             </ul>
         </li>
         @endif
@@ -75,9 +75,7 @@
                     <span class="popmenu-bullet"></span>
                     <div class="cart-list" id="cart-list">
                         <table class="table">
-
                             @foreach(Session::get('cart') as $checkout)
-
                           <tr>
                             <td><a class="img" href="#"><img src="{{ URL::to('/').'/uploads/images/'.$checkout['attributes']['image'] }}" alt="avatar" /></a>
                             </td>
@@ -85,7 +83,7 @@
                             </td>
                             <td width="15%">x {{ $checkout->quantity }}</td>
                             <td>{{ number_format($checkout->unit_price) }}</td>
-                            <td><a href="{{ route('deleteCart') }}">X</a></td>
+                            <td><a href="{{ route('deleteCart',$checkout->id) }}">X</a></td>
                           </tr>
                           @endforeach
                         </table>
@@ -93,7 +91,8 @@
                     <div class="popmenu-bottom clearfix">
                     <a href="{{ route('show') }}" class="pull-left">Thanh toán ngay <span class="glyphicon glyphicon-share-alt">
                     </span></a>
-                        <span class="pull-right">Tổng tiền: <strong class="text-danger">{{ number_format(Session::get('subTotal')) }} vnđ</strong>
+                        <span class="pull-right">Tổng tiền: <strong class="text-danger">
+                        {{ number_format(Session::get('subTotal')) }} vnđ</strong>
                         </span>
                     </div>
                 </div>

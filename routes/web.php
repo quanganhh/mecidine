@@ -40,7 +40,7 @@ Route::get('/', 'PageController@index')->name('index');
 Route::group(['prefix'=>'cart'],function(){
  Route::get('add-to-cart/{id}', 'CartController@getAddCart')->name('addCart');
  Route::get('show', 'CartController@getShowCart')->name('show');
- Route::get('delete', 'CartController@getDeleteCart')->name('deleteCart');
+ Route::get('delete/{id}', 'CartController@getDeleteCart')->name('deleteCart');
 
 });
 Route::get('categoryPage/{id}', 'PageController@getCategoryPage')->name('categoryPage');
@@ -49,5 +49,6 @@ Route::get('search', 'PageController@getSearch')->name('search');
 Route::get('signup', 'PageController@getRegister')->name('register');
 Route::post('register', 'PageController@postRegister')->name('postRegister');
 
-Route::get('login', 'PageController@getSignin')->name('signin');
+Route::get('login-frontend', 'PageController@getSignin')->name('signin');
 Route::post('signin', 'PageController@postSignin')->name('postSignin');
+Route::get('logout-frontend', 'PageController@logoutFrontend')->name('logout-frontend');

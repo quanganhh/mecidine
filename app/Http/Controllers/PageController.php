@@ -102,7 +102,7 @@ class PageController extends Controller
         $user->address = $request->address;
         $user->save();
 
-        return redirect()->with('success', 'Đăng kí thành công');
+        return redirect()->route('signin')->with('success', 'Đăng kí thành công');
     }
 
     public function getSignin()
@@ -112,7 +112,6 @@ class PageController extends Controller
 
     public function postSignin(Request $request)
     {
-        // dd('ok');
         $this->validate($request,
         [
             // 'username'    => 'required|unique:users,username',
@@ -124,11 +123,20 @@ class PageController extends Controller
             'password.min'      => 'Mật khẩu ít nhất phải 6 kí tự',
             'password.max'      => 'Mật khẩu tối đã 16 kí tự',
         ]);
+
         $credentials = array('username' => $request->username , 'password' => $request->password);
-        if(Auth::attempt($credentials)){
-        return redirect()->route('index')->with('loginSuccess', 'Đăng nhập thành công');
-        }else{
-        return redirect()->back()->with('fail', 'Đăng nhập thất bại');
+        if(Auth::attempt($credentials))
+        {
+            return redirect()->route('index')->with('loginSuccess', 'Đăng nhập thành công');
+        }else
+        {
+            return redirect()->back()->with('fail', 'Đăng nhập thất bại');
         }
+    }
+
+    public function logoutFrontend(Request $request)
+    {
+         Auth::logout();
+        return redirect()->route('index');
     }
 }

@@ -60,7 +60,7 @@
                                     <li class="user-header">
                                         <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                         <p>
-                                            Xin chào {{ Session::get('name') }}
+                                            Xin chào {{ Auth::user()->name }}
                                             <small>Member since Nov. 2012</small>
                                         </p>
                                     </li>

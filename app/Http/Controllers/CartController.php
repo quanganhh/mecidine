@@ -28,15 +28,15 @@ class CartController extends Controller
             
             'attributes' => array(
             'image'      => $productCart->image,
-            'totalPrice' => $productCart->unit_price*$request->quantity,
+            'totalPrice' => $productCart->unit_price,
             )
         ]);
-           $subTotal = 0;
-           foreach (Cart::getcontent() as $key => $value) 
-           {
-               $subTotal  += $value->attributes->totalPrice;
-               Session::put('subTotal', $subTotal);  
-           }  
+        $subTotal = 0;
+        foreach (Cart::getcontent() as $key => $value) 
+        {
+            $subTotal  += ($value->attributes->totalPrice*$value->quantity);
+            Session::put('subTotal', $subTotal);  
+        }  
         Session::put('cart', Cart::getcontent());
 
          return redirect()->back();
@@ -50,9 +50,10 @@ class CartController extends Controller
         return view('page.cart.index', $data);
     }
 
-    public function getDeleteCart()
+    public function getDeleteCart($id)
     {
-        Cart::clear();
+        Cart::clear($id);
         session()->flush();
+        return redirect()->back();
     }
 }
