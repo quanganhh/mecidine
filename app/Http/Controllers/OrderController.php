@@ -63,7 +63,6 @@ class OrderController extends Controller
     public function ajaxStatus($id)
     {
         $statusOrder = Order::where('id', $id)->first();
-        // dd($statusOrder);
         return response()->json($statusOrder);
     }
 }

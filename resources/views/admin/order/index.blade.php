@@ -109,7 +109,6 @@
             }
         });
     }
-
     // $(document).ready(function(){
     //     $( "#wait" ).click(function(id){
     //         // var id = $(this).val();
