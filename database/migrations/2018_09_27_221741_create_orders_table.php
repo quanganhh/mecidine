@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->float('total_price', 20, 2)->unsigned();
             $table->string('address')->nullable();
             $table->string('ship_date')->nullable();
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('shipment_id')->references('id')->on('shipments')->onDelete('cascade');

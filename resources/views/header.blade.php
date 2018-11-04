@@ -39,7 +39,6 @@
           </div>
         </li>
       </ul>
-      {{-- @dd(Session::get('cart'))    --}}
       <ul class="nav navbar-nav navbar-right">
         @if(!Auth::user())
         <li><a href="{{ route('register') }}">Đăng ký</a></li>

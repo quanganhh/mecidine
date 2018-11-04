@@ -1310,7 +1310,7 @@ ul.commitment li p{
 	font-size:22px;
 }
 .order-box{
-	background:#f9f9f9;
+	background:#fff;
 	border:1px solid #d9d9d9;
 	padding:20px 10px 15px;
 }
@@ -1320,14 +1320,14 @@ ul.commitment li p{
 }
 .btn-order-form{
 	border:none;
-	background:url(../images/btn-order.png) no-repeat left top;
 	width:163px;
 	height:41px;
 	overflow:hidden;
-	text-indent:-4000px;
 	display:inline-block;
 	margin-bottom:10px;
 	margin-top:-4px;
+	border-radius: 60%;
+	background:#90c53f;
 }
 .btn-pdcart{
 	color:#333;

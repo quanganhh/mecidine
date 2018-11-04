@@ -11,12 +11,13 @@ class OrderController extends Controller
 {
     public function index(Request $request)
     {
-     $data = [];
+        $data = [];
+        
         $keyword = $request->keyword;
         $data['key'] = $keyword;
         $data['list_order'] = Order::with(['user', 'payment', 'shipment', 'order_status'])->paginate(4);
-        // dd($data);
-        return view('admin.order.index',$data);
+
+        return view('admin.order.index', $data);
     }
 
     public function detail(Request $request)
@@ -25,7 +26,6 @@ class OrderController extends Controller
         $keyword = $request->keyword;
         $data['key'] = $keyword;
         $data['list_detail'] = Order::with(['user', 'products' ])->get();
-        // dd($data['list_detail']);
 
         return view('admin.order.detail',$data);
     }
@@ -58,5 +58,12 @@ class OrderController extends Controller
                 echo "FAIL";
             }
         }
+    }
+
+    public function ajaxStatus($id)
+    {
+        $statusOrder = Order::where('id', $id)->first();
+        // dd($statusOrder);
+        return response()->json($statusOrder);
     }
 }

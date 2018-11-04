@@ -8,7 +8,7 @@ class Shipment extends Model
 {
     protected $fillable = [
         'id',
-        'type',
+        'name',
         'cost',
         'status',
         'created_at',

@@ -45,8 +45,6 @@
                            <span class="item-price">{{ number_format($value->promotion_price) }} vnđ</span>
                            @endif
                         <p class="single-item-caption">
-                                     <a class="add-to-cart pull-left" href="">
-                                     <i class="fa fa-shopping-cart"></i></a>
                                      <a href="{{ route('productDetail',$value->id) }}" 
                                      class="beta-btn primary pull-right" >{{ trans('message.detail') }}<i 
                                      class="fa fa-chevron-right"></i></a>

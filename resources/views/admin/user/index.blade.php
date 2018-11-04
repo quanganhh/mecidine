@@ -42,7 +42,7 @@
                     <td>{{ $value->email }}</td>
                     <td>{{ $value->phone }}</td>
                     <td>{{ $value->address }}</td>
-                    <td>{{ ($value->level == 1) ? 'Người dùng' : (($value->level == 0) ? 'Quản lý' : 'Super Admin') }}</td>
+                    <td>{{ ($value->level == 3) ? 'Người dùng' : (($value->level == 0) ? 'Super Admin' : 'người dùng') }}</td>
                     <td>{{ ($value->status == 1) ? 'Hoạt động' : 'Ngừng hoạt động' }}</td>
                     <td colspan="" rowspan="" headers="">
                 <div>

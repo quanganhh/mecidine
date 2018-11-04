@@ -4,9 +4,6 @@
     <div class="container">
         <div class="row pages-content">
             <div class="col-lg-12 col-md-12 col-sm-12">
-                {{-- @php
-                dd(Cart::content());
-                @endphp --}}
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
                     <li class="active"><a href="#">{{ $product_detail->name }}</a></li>
@@ -91,7 +88,8 @@
                                         </div>                           
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-12 control-label">ĐẶT HÀNG:</label>                                    </div>
+                                    <label class="col-sm-12 control-label">ĐẶT HÀNG:</label> 
+                                    </div>
                                         <div class="form-group">
                                         <form action="{{ route('addCart',$product_detail->id) }}" method="get">
                                             <div class="col-sm-12">
@@ -104,10 +102,8 @@
                                                     </div>
                                                     <div class="box-order-button">
                                                         <div class="clearfix">
-                                                            <a href="{{ route('show') }}" class="btn-order-form">Thanh toán ngay</a>
+                                                            <button type="submit" class="btn-order-form btn-success" value="">{{trans('message.add_to_cart')}}</button>
                                                         </div>
-                                                    
-                                                        <button type="submit" value="">Đưa vào giỏ hàng</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -231,4 +227,4 @@
             </div>
         </div>
     </section>
-    @endsection
+@endsection

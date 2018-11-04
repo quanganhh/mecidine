@@ -13,7 +13,7 @@ class AddQuantityToOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('order_product', function (Blueprint $table) {
             $table->integer('quantity')->unsigned();
         });
     }
@@ -25,7 +25,7 @@ class AddQuantityToOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('order_product', function (Blueprint $table) {
             $table->dropColumn('quantity');
         });
     }

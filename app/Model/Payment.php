@@ -11,6 +11,7 @@ class Payment extends Model
         'id',
         'name',
         'created_at',
+        'status',
         'update_at',
     ];
 

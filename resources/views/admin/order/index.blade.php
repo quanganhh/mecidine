@@ -15,12 +15,12 @@
                 <tr>
                 <th>ID</th>
                 <th>{{ trans('message.namecustomer') }}</th>
-	              <th>{{ trans('message.paymentmethod') }}</th>
+                  <th>{{ trans('message.paymentmethod') }}</th>
                 <th>{{ trans('message.address') }}</th>
                 <th>{{ trans('message.shipdate') }}</th>
-                <th>{{ trans('message.order_status') }}</th>
                 <th>{{ trans('message.order_stt') }}</th>
-	              <th>{{ trans('message.action') }}</th>
+                <th>{{ trans('message.order_status') }}</th>
+                  <th>{{ trans('message.action') }}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -36,8 +36,8 @@
                         <button onclick="done({{ $val->id }})" class="btn btn-success btn-sm" type="button" title="Success" {{ ($val->order_status_id == 3) ? 'disabled': ''}}>Đã nhận hàng</button>
                     </td>
                      <td>
-                        <span><a class="btn btn-warning btn-sm" href="{{-- {{ route('admin.order.edit',['id'=>$val->id]) }} --}}" title="Edit">Chờ duyệt</a></span>
-                      <span><a class="btn btn-success btn-sm" href="{{-- {{ route('admin.order.edit',['id'=>$val->id]) }} --}}" title="Edit">Duyệt</a></span>
+                        <span><button type="button" class="btn btn-warning btn-sm" id="wait">{{ trans('message.wait')}}</button></span>
+                        <span><button type="button" class="btn btn-success btn-sm">{{ trans('message.done')}}</button></span>
                     </td>
                     <td>
                       <span><a class="btn btn-info btn-sm" href="{{ route('detail',['id'=>$val->id]) }}" title="Edit">Chi tiết</a>
@@ -109,6 +109,22 @@
             }
         });
     }
+
+    // $(document).ready(function(){
+    //     $( "#wait" ).click(function(id){
+    //         // var id = $(this).val();
+    //         // alert(id);
+    //          $.ajax({
+    //         url: "admin/order/ajaxStatus/{id}",
+    //         type: "POST",
+    //         // data{statusOrder: statusOrder},
+    //         success: function(done)
+    //         {
+    //             alert('ok');
+    //         }
+    //       });
+    //     });
+    // })
 </script>
 @endsection
 @endsection 

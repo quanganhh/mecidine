@@ -81,4 +81,18 @@ return [
     'detail'              => 'Chi tiết',
     'searchkey'           => 'Tìm kiếm với từ khóa',
     'transport'           => 'Hình thức vận chuyển',
+    'continue'            => 'Tiếp tục mua hàng',
+    'input_info'          => 'Điền thông tin khách hàng',
+    'info_Customer'       => 'Thông tin khách hàng',
+    'add_to_cart'         => 'Thêm vào giỏ hàng',
+    'payment'             => 'Thanh toán',
+    'max_speed'           => 'Hỏa tốc (dưới 2h)',
+    'speed'               => 'Nhanh (2-3 ngày)',
+    'saving'              => 'Tiết kiếm(5-7 ngày)',
+    'unitprice'           => 'Đơn giá(VNĐ)',
+    'received'            => 'Nhận hàng rồi thanh toán',
+    'atm'                 => 'Thanh toán qua ATM',
+    'wait'                => 'Chờ duyệt',
+    'done'                => 'Đã duyệt',
+    
 ];

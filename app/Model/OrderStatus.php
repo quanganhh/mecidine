@@ -11,7 +11,8 @@ class OrderStatus extends Model
 
     protected $fillable = [
         'id',
-        'description',
+        'name',
+        'status',
         'created_at',
         'update_at',
     ];

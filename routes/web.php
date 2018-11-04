@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
         Route::get('detail', 'OrderController@detail')->name('detail');
         Route::post('ship', 'OrderController@ship')->name('ship');
         Route::post('done', 'OrderController@done')->name('done');
+        Route::post('ajaxStatus/{id}', 'OrderController@ajaxStatus')->name('ajaxStatus');
     });
 
     Route::group(['prefix'=>'user'],function(){
@@ -52,3 +53,4 @@ Route::post('register', 'PageController@postRegister')->name('postRegister');
 Route::get('login-frontend', 'PageController@getSignin')->name('signin');
 Route::post('signin', 'PageController@postSignin')->name('postSignin');
 Route::get('logout-frontend', 'PageController@logoutFrontend')->name('logout-frontend');
+Route::post('cart-complete','CartController@postCompleteCart')->name('cart_complete');

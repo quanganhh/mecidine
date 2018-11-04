@@ -8,6 +8,12 @@ class OrderProduct extends Model
 {
     protected $table = 'order_product';
 
+    protected $fillable = [
+    	'order_id',
+    	'product_id',
+    	'quantity',
+    ];
+
     public function products()
     {
     	return $this->hasMany(Product::class, 'id', 'product_id');

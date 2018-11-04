@@ -37,12 +37,10 @@
 	                   		 <td>{{ $val->user->phone }}</td>
                         	<td>{{ $val->user->address }}</td>
                         	<td>
-                        		<span><a href="#"><i class="fa fa-pencil-square-o edit1"></i></a></span>
-                        		<span><a href="#"><i class="fa fa-trash delete1"></i></a></span>
+                        		<span><a href="#"><i class="fa fa-trash-alt"></i></a></span>
                         	</td>
                 	@endforeach
-
-	                  </tr>
+	               </tr>
 				@endforeach
             </tbody>
             <tfoot>

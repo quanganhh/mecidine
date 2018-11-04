@@ -100,6 +100,7 @@ class PageController extends Controller
         $user->phone = $request->phone;
         $user->email = $request->email;
         $user->address = $request->address;
+        $user->level   = 3;
         $user->save();
 
         return redirect()->route('signin')->with('success', 'Đăng kí thành công');
