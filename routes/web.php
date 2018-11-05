@@ -29,7 +29,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
         Route::get('detail', 'OrderController@detail')->name('detail');
         Route::post('ship', 'OrderController@ship')->name('ship');
         Route::post('done', 'OrderController@done')->name('done');
-        Route::post('ajaxStatus/{id}', 'OrderController@ajaxStatus')->name('ajaxStatus');
+        Route::get('ajaxStatus', 'OrderController@ajaxStatus')->name('ajaxStatus');
     });
 
     Route::group(['prefix'=>'user'],function(){

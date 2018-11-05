@@ -2,7 +2,7 @@
 @section('content')
 <div class="box">
             <div class="box-header">
-                <h3 class="box-title">{{ trans('message.productL') }}</h3>
+                <h3 class="box-title">{{ trans('message.ordertext') }}</h3>
             </div>
             <div class="col-md-12">
                 <input type="text" name="" id="keyword" value="{{-- {{ $key }} --}}">
@@ -36,8 +36,12 @@
                         <button onclick="done({{ $val->id }})" class="btn btn-success btn-sm" type="button" title="Success" {{ ($val->order_status_id == 3) ? 'disabled': ''}}>Đã nhận hàng</button>
                     </td>
                      <td>
-                        <span><button type="button" class="btn btn-warning btn-sm" id="wait">{{ trans('message.wait')}}</button></span>
-                        <span><button type="button" class="btn btn-success btn-sm">{{ trans('message.done')}}</button></span>
+                        @if($val->status == 0)
+                        <span class="span<?=  $val->id ?>"><button type="button" class="btn btn-warning btn-sm status" data-id="<?= $val->id ?>">{{ trans('message.wait')}}</button></span>
+                        @elseif( $val->status == 1 )
+                        <span><button type="button" class="btn btn-success btn-sm" data-id="<?= $val->id ?>">{{ trans('message.done')}}</button></span>
+                        @endif
+                        <span class="hidden-status done<?= $val->id ?>"><button type="button" class="btn btn-success btn-sm " data-id="<?= $val->id ?>">{{ trans('message.done')}}</button></span>
                     </td>
                     <td>
                       <span><a class="btn btn-info btn-sm" href="{{ route('detail',['id'=>$val->id]) }}" title="Edit">Chi tiết</a>
@@ -84,14 +88,17 @@
             success: function(res) {
                 res = $.trim(res);
                 if (res === 'OK') {
-                    alert('Đơn hàng bắt đầu được giao');
+                    toastr["success"]("Đơn hàng bắt đầu được giao");
+                    setTimeout(function(){
                     window.location.reload(true);
+                    }, 2000);
                 } else {
-                    alert('Có lỗi xảy ra');
+                    toastr["warning"]("Có lỗi xảy ra");
                 }
             }
         });
     }
+    
     function done(id)
     {
         $.ajax({
@@ -101,29 +108,34 @@
             success: function(res) {
                 res = $.trim(res);
                 if (res === 'OK') {
-                    alert('Đơn hàng đã giao thành công');
+                    toastr["success"]("Đơn hàng đã giao thành công");
+                    setTimeout(function(){
                     window.location.reload(true);
+                    }, 2000);
+                    
                 } else {
-                    alert('Có lỗi xảy ra');
+                    toastr["warning"]("Có lỗi xảy ra");
                 }
             }
         });
     }
-    // $(document).ready(function(){
-    //     $( "#wait" ).click(function(id){
-    //         // var id = $(this).val();
-    //         // alert(id);
-    //          $.ajax({
-    //         url: "admin/order/ajaxStatus/{id}",
-    //         type: "POST",
-    //         // data{statusOrder: statusOrder},
-    //         success: function(done)
-    //         {
-    //             alert('ok');
-    //         }
-    //       });
-    //     });
-    // })
+
+    $(document).ready(function(){
+        $( ".status" ).click(function(id){
+            var id = $(this).data('id');
+             $.ajax({
+            url: "ajaxStatus",
+            type: "GET",
+            data: {id: id},
+            success: function(done)
+            {
+                $('.span'+id).hide();
+                $('.done'+id).css('display', 'block');
+                   toastr["success"]("Đã duyệt đơn");
+            }
+          });
+        });
+    })
 </script>
 @endsection
 @endsection 

@@ -130,7 +130,7 @@
                                                 </div>
                                             </td>
                                             <td align="center"><span class="fa fa-trash text-warning fs16"></span></td>
-                                            <td align="center"><input type="number" name="quantity" class="form-control" value="{{ $product->quantity }}"></td>
+                                            <td align="center"><span>{{ $product->quantity }}</span></td>
                                             <td align="right">{{ number_format($product->unit_price) }} vnđ </td>
                                         </tr>
                                         @endforeach

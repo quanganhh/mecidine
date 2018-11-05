@@ -17,6 +17,7 @@ return [
     'category'            => 'Category',
     'product'             => 'Product',
     'order'               => 'Order',
+    'order_detail'        => 'Order Detail',
     'comment'             => 'Comment',
     'account'             => 'Account',
     'manage'              => 'Manage',

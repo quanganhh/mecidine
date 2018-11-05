@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12">
-        <h3 class="text-center">Chi tiết đơn hàng</h3>
+        <h3 class="text-center">{{ trans('message.order_detail') }}</h3>
     </div>
     <div class="col-lg-12 mt-3">
         <table class="table table-striped table-bordered">
@@ -37,7 +37,7 @@
 	                   		 <td>{{ $val->user->phone }}</td>
                         	<td>{{ $val->user->address }}</td>
                         	<td>
-                        		<span><a href="#"><i class="fa fa-trash-alt"></i></a></span>
+                        		<span><a href="#"><i class="fa fa-delete">delete</i></a></span>
                         	</td>
                 	@endforeach
 	               </tr>

@@ -10,3 +10,8 @@
 {
 	font-size: 30px;
 }
+
+.hidden-status
+{
+	display: none;
+}

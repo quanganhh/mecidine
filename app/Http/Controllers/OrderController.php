@@ -15,7 +15,7 @@ class OrderController extends Controller
         
         $keyword = $request->keyword;
         $data['key'] = $keyword;
-        $data['list_order'] = Order::with(['user', 'payment', 'shipment', 'order_status'])->paginate(4);
+        $data['list_order'] = Order::with(['user', 'payment', 'shipment', 'order_status'])->paginate(10);
 
         return view('admin.order.index', $data);
     }
@@ -60,9 +60,12 @@ class OrderController extends Controller
         }
     }
 
-    public function ajaxStatus($id)
+    public function ajaxStatus(Request $request)
     {
-        $statusOrder = Order::where('id', $id)->first();
+        $statusOrder = Order::where('id', $request->id)->first();
+        $statusOrder->status = 1;
+        $statusOrder->save();
+
         return response()->json($statusOrder);
     }
 }

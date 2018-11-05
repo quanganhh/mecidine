@@ -150,7 +150,7 @@
   var name_cate = $(this).attr('data-name');
   $('#fid').val($(this).data('id'));
   $('.edit').attr('data-id',id_cate);
-          $('#n').val(name_cate);// ok baby ok a:
+          $('#n').val(name_cate);
           $('#editCate').modal('show');
         });
 

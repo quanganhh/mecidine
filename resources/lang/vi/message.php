@@ -17,6 +17,7 @@ return [
     'category'            => 'Danh mục',
     'product'             => 'Sản phẩm',
     'order'               => 'Đơn hàng',
+    'order_detail'        => 'Chi tiết đơn hàng',
     'comment'             => 'Phản hồi',
     'account'             => 'Tài khoản',
     'manage'              => 'Quản lý',

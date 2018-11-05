@@ -114,7 +114,7 @@ class CartController extends Controller
         $order->save();
         //luu chi tiet don hang
         foreach (Cart::getContent('cart') as $key => $value) {
-            $order_product =new OrderProduct();
+            $order_product = new OrderProduct();
             DB::table('order_product')->insert([
                 'product_id' => $value->id,
                 'order_id' => $order->id,

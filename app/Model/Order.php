@@ -45,4 +45,9 @@ class Order extends Model
         return $this->belongsToMany(Product::class);
     }
 
+    public function order_product()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
 }
