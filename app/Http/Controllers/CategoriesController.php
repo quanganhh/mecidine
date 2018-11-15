@@ -7,6 +7,7 @@ use App\Model\Category;
 use DB;
 use Session;
 use Validator;
+use Input;
 
 class CategoriesController extends Controller
 {
