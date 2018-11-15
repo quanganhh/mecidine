@@ -144,7 +144,6 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $product_id = Product::find($id);
-        // dd($product_id);
         $cate_id = $request->category_id;
         $name = $request->name;
         $unit_price = $request->unit_price;
@@ -210,6 +209,5 @@ class ProductController extends Controller
         Session::flash('success', 'Xóa thành công !');
         
         return redirect()->route('products.index');
-        // dd($product);
     }
 }

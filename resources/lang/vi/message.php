@@ -35,6 +35,7 @@ return [
     'forgot'              => 'Quên mật khẩu',
     'signin'              => 'Đăng nhập',
     'remember'            => 'Nhớ mật khẩu',
+    'register'            => 'Đăng ký tài khoản',
     'emailval'            => 'Vui lòng nhập Email',
     'passval'             => 'Vui lòng nhập mật khẩu',
     'add'                 => 'Thêm mới',
@@ -95,5 +96,13 @@ return [
     'atm'                 => 'Thanh toán qua ATM',
     'wait'                => 'Chờ duyệt',
     'done'                => 'Đã duyệt',
+    'autologin'           => 'Tự động đăng nhập',
+    'accountlogin'        => 'Đăng nhập tài khoản',
+    'loginfacebook'       => 'Bạn có thể đăng nhập bằng tài khoản',
+    'myoder'              => 'Hóa đơn của tôi',
+    'user'                => 'Tên đăng nhập',
+    'updateInfo'          => 'Thay đổi thông tin',
+    'settinginfo'         => 'Thiết lập thông tin cá nhân',
+    'changePass'          => 'Thay đổi mật khẩu',
     
 ];

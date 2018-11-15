@@ -36,8 +36,9 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>{{ trans('message.product_cate') }}</th>
-              <th>{{ trans('message.action') }}</th>
+              <th>{{ __('message.product_cate') }}</th>
+              <th>{{ __('message.image') }}</th>
+              <th>{{ __('message.action') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -45,6 +46,7 @@
             <tr>
               <td>{{ $value->id }}</td>
               <td id="title-{{ $value->id }}">{{ $value->category_name }}</td>
+              <td id=""><img src="{{ URL::to('/').'/uploads/images/'.$value->image }}" style="max-width: 100px;"></td>
               <td colspan="" rowspan="" headers="">
                 <div>
                   <span>
@@ -103,9 +105,11 @@
         <h4 class="modal-title">{{ trans('message.addC') }}</h4>
       </div>
       <div class="modal-body">
-        {!! Form::open(['method' => 'get','route' => 'categories.create']) !!}
+        <span>{!! Form::open(['method' => 'get','route' => 'categories.create', 'files' => true]) !!}</span>
         <span>{!! Form::label('Tên danh mục :', '', array('class' => '')) !!}</span>
-        {!! Form::text('name', null, array('class' => 'form-control', 'required')) !!}
+        <span>{!! Form::text('name', null, array('class' => 'form-control', 'required')) !!}</span>
+        <span>{!! Form::label('Ảnh :', '', array('class' => '')) !!}</span>
+        <span>{!! Form::file('file', array('class' => 'upload-file', 'id' => 'logo', 'required')) !!}</span>
       </div>
       <div class="modal-footer">
         <a href="{{ route('categories.create') }}">

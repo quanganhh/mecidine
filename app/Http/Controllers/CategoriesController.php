@@ -33,6 +33,14 @@ class CategoriesController extends Controller
     {
         $category = new Category;
         $category->category_name = $rq['name'];
+        $category->image = $rq['file'];
+        if(Input::hasFile('logo'))
+        {
+            return 'file present';
+        }else
+        {
+            return "file not present";
+        }
         $category->save();
 
         Session::flash('message', 'Thêm mới thành công !');

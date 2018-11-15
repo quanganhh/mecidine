@@ -140,4 +140,11 @@ class PageController extends Controller
          Auth::logout();
         return redirect()->route('index');
     }
+
+    public function infoCustomer($id)
+    {
+        $user = User::where('id', $id)->first();
+        
+        return view('page.info.index', compact('user'));
+    }
 }

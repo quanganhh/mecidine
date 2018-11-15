@@ -128,7 +128,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('user.index') }}">
+                            <a href="{{ route('user') }}">
                             <i class="fa fa-share"></i>
                             <span>{{ trans('message.account') }}</span>
                             <span class="pull-right-container">

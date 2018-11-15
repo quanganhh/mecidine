@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Session;
+use Auth;
 
 class CheckLoginAdmin
 {
@@ -14,32 +15,13 @@ class CheckLoginAdmin
      * @param  \Closure  $next
      * @return mixed
      */
+    
     public function handle($request, Closure $next)
     {
-        $id =  $this->getSessionIdAdmin();
-    	$email = $this->getSessionEmailAdmin();
-        if ($id <= 0 || $email == '') {
-            return redirect()->route('login');
+        if(Auth::user())
+        {
+            return $next($request);
         }
-        return $next($request);
-    }
-
-    private function getSessionUserAdmin()
-    {
-        $username = Session::get('username');
-        return $username;
-    }
-
-    private function getSessionIdAdmin()
-    {
-        $id = Session::get('id');
-        $id = is_numeric($id) ? $id : 0;
-        return $id;
-    }
-
-    private function getSessionEmailAdmin()
-    {
-        $email = Session::get('email');
-        return $email;
+        return redirect()->route('signin');
     }
 }

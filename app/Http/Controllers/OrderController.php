@@ -20,12 +20,15 @@ class OrderController extends Controller
         return view('admin.order.index', $data);
     }
 
-    public function detail(Request $request)
+    public function detail(Request $request, $id)
     {
         $data = [];
-        $keyword = $request->keyword;
-        $data['key'] = $keyword;
-        $data['list_detail'] = Order::with(['user', 'products' ])->get();
+        $data['list_detail'] = Order::with(['user', 'products'])->where('id', $id)->get();
+        foreach ($data['list_detail'] as $key => $value) {
+            foreach ($value->products as $product) {
+                $product->pivot->quantity;
+            }
+        }
 
         return view('admin.order.detail',$data);
     }

@@ -28,10 +28,10 @@
 						 	<td>{{ $val->id }}</td>
 	                        <td>{{ $val->user->name }}</td>
 	                        <td>{{ $product->name }}</td> 
-	                        <td>{{ $product->quantity }}</td>
+	                        <td>{{ $product->pivot->quantity }}</td>
 	                        <td>{{ number_format($product->unit_price) }}</td>
 	                       	@php
-					          $subTotal = $product->quantity*$product->unit_price;
+					          $subTotal = $product->pivot->quantity*$product->unit_price;
 					          $total += $subTotal;
 				            @endphp
 	                   		 <td>{{ $val->user->phone }}</td>
@@ -39,14 +39,14 @@
                         	<td>
                         		<span><a href="#"><i class="fa fa-delete">delete</i></a></span>
                         	</td>
-                	@endforeach
 	               </tr>
+                    @endforeach
 				@endforeach
             </tbody>
             <tfoot>
                 <tr>
                     <td colspan="1">{{ trans('message.totalPrice') }} :</td>
-                    <td>{{ number_format($total) }}</td>
+                    <td>{{ number_format($total) }} vnđ</td>
                 </tr>
             </tfoot>
         </table>

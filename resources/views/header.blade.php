@@ -52,11 +52,11 @@
                     <span class="pull-left"><img src="images/data/avatar.jpg" /></span> {{ Auth::user()->name }} <br /><span class="clr-99">{{ Auth::user()->username }}</span>
                 </li>
                  <li class="divider"></li>
-                <li><a href="#"><i class="glyphicon glyphicon-info-sign"></i> Thông tin cá nhân</a></li>
+                <li><a href="{{ route('info',Auth::user()->id)}}"><i class="glyphicon glyphicon-info-sign"></i> {{__('message.info')}}</a></li>
                 <li class="divider"></li>
-                <li><a href="#"><i class="glyphicon glyphicon-book"></i> Hoá đơn của tôi</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-book"></i> {{__('message.myoder')}}</a></li>
                 <li class="divider"></li>
-                <li><a href="{{ route('logout-frontend') }}"><i class="glyphicon glyphicon-log-out"></i> Đăng xuất</a></li>
+                <li><a href="{{ route('logout-frontend') }}"><i class="glyphicon glyphicon-log-out"></i> {{ __('message.logout')}}</a></li>
             </ul>
         </li>
         @endif
@@ -64,27 +64,28 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-cart"></span>
             <span class="message-count">
-                    (@if(Session::has('cart')){{ count(Session::get('cart'))}} @else Không có sản phẩm nào 
+                    (@if(Session::has('cart')){{ count(Session::get('cart'))}}
                     @endif)
             </span>
           </a>
-           
           <div class="dropdown-menu" role="menu">
             <div class="popmenu popup-cart">
                     <span class="popmenu-bullet"></span>
                     <div class="cart-list" id="cart-list">
                         <table class="table">
+                            @if(Session::has('cart'))
                             @foreach(Session::get('cart') as $checkout)
                           <tr>
-                            <td><a class="img" href="#"><img src="{{ URL::to('/').'/uploads/images/'.$checkout['attributes']['image'] }}" alt="avatar" /></a>
+                            <td><a class="img" href="{{ route('productDetail', $checkout->id) }}"><img src="{{ URL::to('/').'/uploads/images/'.$checkout['attributes']['image'] }}" alt="avatar" /></a>
                             </td>
-                            <td width="45%"><a class="g-title" href="#">{{ $checkout->name }}</a>
+                            <td width="45%"><a class="g-title" href="{{ route('productDetail', $checkout->id)}}">{{ $checkout->name }}</a>
                             </td>
                             <td width="15%">x {{ $checkout->quantity }}</td>
                             <td>{{ number_format($checkout->unit_price) }}</td>
                             <td><a href="{{ route('deleteCart',$checkout->id) }}">X</a></td>
                           </tr>
                           @endforeach
+                          @endif
                         </table>
                     </div><!--cart-list-->
                     <div class="popmenu-bottom clearfix">

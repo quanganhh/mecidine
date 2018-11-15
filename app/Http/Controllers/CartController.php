@@ -64,10 +64,20 @@ class CartController extends Controller
         return view('page.cart.index')->withData($data)->withUser($user);
     }
 
-    public function getDeleteCart($id)
+    public function getDeleteCart(Request $request, $id)
     {
-        Cart::clear($id);
-        session()->flush();
+        $products = Session('cart');
+        foreach ($products as $key => $value)
+        {
+            $total = Session::get('subTotal') - ($value['attributes']['totalPrice']*$value->quantity);
+            if ($value['id'] == $id) 
+            {     
+                Cart::remove($id);
+                Session::put('subTotal', $total);
+            }
+            unset($products[$key]);
+            break;          
+        }
         
         return redirect()->back();
     }
@@ -121,6 +131,7 @@ class CartController extends Controller
                 'quantity' => $value->quantity,
             ]);
         }
+        
         return redirect()->back();
     }
 }
