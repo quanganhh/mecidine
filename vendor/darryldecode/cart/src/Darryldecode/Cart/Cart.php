@@ -156,7 +156,7 @@ class Cart
                     $this->add(
                         $item['id'],
                         $item['name'],
-                        $item['unit_price'],
+                        $item['price'],
                         $item['quantity'],
                         Helpers::issetAndHasValueOrAssignDefault($item['attributes'], array()),
                         Helpers::issetAndHasValueOrAssignDefault($item['conditions'], array())
@@ -166,7 +166,7 @@ class Cart
                 $this->add(
                     $id['id'],
                     $id['name'],
-                    $id['unit_price'],
+                    $id['price'],
                     $id['quantity'],
                     Helpers::issetAndHasValueOrAssignDefault($id['attributes'], array()),
                     Helpers::issetAndHasValueOrAssignDefault($id['conditions'], array())
@@ -180,7 +180,7 @@ class Cart
         $item = $this->validate(array(
             'id' => $id,
             'name' => $name,
-            'unit_price' => Helpers::normalizePrice($price),
+            'price' => Helpers::normalizePrice($price),
             'quantity' => $quantity,
             'attributes' => new ItemAttributeCollection($attributes),
             'conditions' => $conditions,
@@ -680,7 +680,7 @@ class Cart
     {
         $rules = array(
             'id' => 'required',
-            'unit_price' => 'required|numeric',
+            'price' => 'required|numeric',
             'quantity' => 'required|numeric|min:1',
             'name' => 'required',
         );
